@@ -10,7 +10,11 @@ public class CalcPI {
          final int NUM_DIG = 10; 
          //cree una constante llamada NUM_DIG que reemplazo todos los número 10 que hubiera en el código 
         MathContext mc = new MathContext(NUM_DIG);         
-        //meter en el método compute
+        compute(NUM_DIG, mc);
+    }
+
+    public static void compute(final int NUM_DIG, MathContext mc) {
+        //Rodee todo lo que estaba entre los dos comentarios de compute, click derecho, refactor, introduce, method, le di el nombre compute
         BigDecimal pi = new BigDecimal(0);
         BigDecimal limit = new BigDecimal(1).movePointLeft(NUM_DIG);
         boolean stop = false;
@@ -23,12 +27,10 @@ public class CalcPI {
             }
         }
         System.out.println(pi.round(mc));
-        //meter en el método compute
     }
 
     public static BigDecimal piFunction(int k, MathContext mc) {
         //Hice click derecho, refactor, introduce, method y puse el nombre de piFunction y le di a finish.
-        //meter en el método piFunction
         int k8 = 8 * k;
         BigDecimal val1 = new BigDecimal(4);
         val1 = val1.divide(new BigDecimal(k8 + 1), mc);
